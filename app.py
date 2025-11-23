@@ -4,7 +4,7 @@ Created on Sun Nov 23 13:42:41 2025
 
 @author: Home-v3
 """
-
+import os
 from flask import Flask, jsonify, render_template
 import markovify, json
 
@@ -34,4 +34,6 @@ def generate():
     return jsonify({"title": title})
 
 if __name__ == "__main__":
-    app.run(debug=False, use_reloader=False)
+    # Render injects PORT env var. You MUST use it and bind to 0.0.0.0
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
