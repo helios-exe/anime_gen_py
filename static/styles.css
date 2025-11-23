@@ -1,0 +1,75 @@
+  body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #b0b0b0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background: #c5c5c5;
+      width: 100%;
+      max-width: 500px;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    .anime-title {
+      font-size: 1.3rem;
+      color: #44a5ff;
+      margin-bottom: 60px;
+      line-height: 1.4;
+    }
+
+    .generate-btn {
+      width: 160px;
+      height: 50px;
+      background: #ddd;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+
+    .generate-btn:hover {
+      background: #ccc;
+    }
+
+    .genre-section {
+      text-align: center;
+    }
+
+    .genre-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .genres {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .genre-box {
+      width: 100px;
+      height: 100px;
+      background: #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .genre-box:hover {
+      background: #ccc;
+    }
