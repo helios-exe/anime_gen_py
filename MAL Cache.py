@@ -9,6 +9,7 @@ Stores:
 - demographic
 - type
 - year
+-popularity
 """
 
 import requests
@@ -18,7 +19,7 @@ import sys
 
 API_BASE = "https://api.jikan.moe/v4/anime"
 REQUEST_INTERVAL = 0.45  # stay polite to Jikan
-CACHE_FILE = "anime_cache_full.json"
+CACHE_FILE = "anime_cache_full.json2"
 
 
 def fetch_page(params, page):
@@ -52,6 +53,12 @@ def extract_item(item):
 
     # year might be None
     year = item.get("year")
+    
+    # ✅ popularity info we want for difficulty
+    popularity = item.get("popularity")
+    rank = item.get("rank")
+    members = item.get("members")     # rough measure of visibility
+    score = item.get("score") 
 
     return {
         "title": title or None,
@@ -61,6 +68,10 @@ def extract_item(item):
         "demographic": demos[0] if demos else None,
         "type": anime_type,
         "year": year,
+        "popularity": popularity,
+        "rank": rank,
+        "members": members,
+        "score": score
     }
 
 
