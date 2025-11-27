@@ -16,8 +16,8 @@ def load_cache(path):
 def extract_english_titles(data):
     entries = []
     for item in data:
-        title = item.get("title_english") or item.get("title")
-        if title and isinstance(title, str):
+        title = item.get("title_english")
+        if title and isinstance(title, str) and item.get("popularity") <= 2500 :
             clean = title.strip()
             if clean:
                 entries.append({
